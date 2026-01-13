@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Resource Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📚 Student Resource Library</h1>
+            <p><i>Organize and access your academic resources efficiently</p>
+        </header>
+
+        <section class="add-resource-section">
+            <button class="btn-primary" id="toggleFormBtn">+ Add New Resource</button>
+            
+            <div class="form-container" id="formContainer">
+                <form id="resourceForm">
+                    <div class="form-header">
+                        <h2>Add New Resource</h2>
+                        <button type="button" class="close-btn" id="closeFormBtn">&times;</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceTitle">Resource Title *</label>
+                        <input type="text" id="resourceTitle" placeholder="e.g., Data Structures Notes" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceSubject">Subject *</label>
+                        <input type="text" id="resourceSubject" placeholder="e.g., Computer Science" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceType">Resource Type *</label>
+                        <select id="resourceType" required>
+                            <option value="">-- Select Type --</option>
+                            <option value="pdf">PDF Document</option>
+                            <option value="image">Image</option>
+                            <option value="article">Article Link</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="fileUploadGroup">
+                        <label for="resourceFile">Upload File *</label>
+                        <input type="file" id="resourceFile" accept=".pdf,image/*">
+                        <small class="hint">Supported: PDF, JPG, PNG, GIF</small>
+                    </div>
+
+                    <div class="form-group" id="urlInputGroup">
+                        <label for="resourceUrl">Article URL *</label>
+                        <input type="url" id="resourceUrl" placeholder="https://example.com/article">
+                        <small class="hint">Enter a valid URL</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceSemester">Semester *</label>
+                        <select id="resourceSemester" required>
+                            <option value="">-- Select Semester --</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                            <option value="3">Semester 3</option>
+                            <option value="4">Semester 4</option>
+                            <option value="5">Semester 5</option>
+                            <option value="6">Semester 6</option>
+                            <option value="7">Semester 7</option>
+                            <option value="8">Semester 8</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Save Resource</button>
+                        <button type="button" class="btn-secondary" id="cancelFormBtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="filter-section">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="🔍 Search by title or subject...">
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="filterType">Type:</label>
+                    <select id="filterType">
+                        <option value="">All Types</option>
+                        <option value="pdf">PDF</option>
+                        <option value="image">Image</option>
+                        <option value="article">Article</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filterSemester">Semester:</label>
+                    <select id="filterSemester">
+                        <option value="">All Semesters</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+                        <option value="3">Semester 3</option>
+                        <option value="4">Semester 4</option>
+                        <option value="5">Semester 5</option>
+                        <option value="6">Semester 6</option>
+                        <option value="7">Semester 7</option>
+                        <option value="8">Semester 8</option>
+                    </select>
+                </div>
+
+                <button class="btn-clear" id="clearFiltersBtn">Clear Filters</button>
+            </div>
+        </section>
+
+        <section class="resources-section">
+            <div class="resources-header">
+                <h2>My Resources</h2>
+                <span class="resource-count" id="resourceCount">0 resources</span>
+            </div>
+
+            <div class="resources-grid" id="resourcesGrid">
+                <!-- Resources will be dynamically inserted here -->
+            </div>
+
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon">📭</div>
+                <h3>No resources found</h3>
+                <p>Start by adding your first resource or adjust your filters</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
