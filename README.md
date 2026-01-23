@@ -6,7 +6,7 @@
 ## 📌 Project Overview
 The **Student Resource Library** is a fully functional, frontend-only web application that helps students **upload, organize, search, filter, open, and delete academic resources** such as **PDFs, images, and article links**.
 
-The application is built entirely using **HTML, CSS, and Vanilla JavaScript**, with a strong focus on **DOM manipulation, event-driven programming, and client-side state management using LocalStorage**.  
+The application is built entirely using **HTML, CSS, and Vanilla JavaScript**, with a strong focus on **DOM manipulation, event-driven programming, and storage persists through LocalStorage**.  
 All interactions happen dynamically in the browser, without the use of any frontend frameworks or backend servers.
 
 ---
@@ -78,6 +78,3 @@ The project demonstrates extensive usage of core DOM and JavaScript concepts:
 - Smooth hover effects and transitions
 - Clear user flow and action feedback
 
-
-## 🎓 Conclusion
-The **Student Resource Library** is a real-world, scalable, and academically aligned frontend project that demonstrates strong proficiency in **DOM manipulation, JavaScript logic, and client-side application development**, making it suitable for final submission and viva evaluation.
